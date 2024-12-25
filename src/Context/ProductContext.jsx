@@ -20,11 +20,21 @@ const ProductContext = ({ children }) => {
     }
   };
 
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
   const addToCart = (product) => {
     const existingProduct = cart.find((item) => item.id === product.id);
 
-    if (!existingProduct) {
-      setCart((prevCart) => [...prevCart, product]);
+    if (existingProduct) {
+      setCart((prevCart) =>
+        prevCart.map((item) =>
+          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+        )
+      );
+    } else {
+      setCart([...cart,  { ...product, quantity: 1 }]);
     }
     console.log(cart);
   };
@@ -33,13 +43,17 @@ const ProductContext = ({ children }) => {
     setCart((prevCart) => prevCart.filter((item) => item.id!== productId));
   };
 
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+  const updateCartQuantity = (productId, quantity) => {
+    setCart(
+      cart.map((item) =>
+        item.id === productId ? { ...item, quantity: quantity } : item
+      )
+    );
+  };
 
   return (
     <div>
-      <productContext.Provider value={{ products, cart, addToCart, loading, removeFromCart }}>
+      <productContext.Provider value={{ products, cart, addToCart, loading, removeFromCart,updateCartQuantity }}>
         {children}
       </productContext.Provider>
     </div>

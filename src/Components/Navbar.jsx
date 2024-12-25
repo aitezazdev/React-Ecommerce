@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { productContext } from "../Context/ProductContext";
 
 const Navbar = () => {
+  const { cart } = useContext(productContext);
   return (
     <nav className="shadow-md fixed z-50 w-full bg-white">
       <div className="container mx-auto flex justify-between items-center py-4 px-20">
         <div className="text-2xl font-bold">
-          <NavLink to="/" className="hover:text-blue-400">
+          <NavLink to="/" className="hover:text-blue-600">
             MyShop
           </NavLink>
         </div>
@@ -15,11 +17,7 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `text-lg ${
-                isActive
-                  ? "text-blue-400"
-                  : "hover:text-blue-300"
-              }`
+              `text-lg ${isActive ? "text-blue-600" : "hover:text-blue-700"}`
             }
           >
             Home
@@ -27,11 +25,7 @@ const Navbar = () => {
           <NavLink
             to="/products"
             className={({ isActive }) =>
-              `text-lg ${
-                isActive
-                  ? "text-blue-400"
-                  : "hover:text-blue-300"
-              }`
+              `text-lg ${isActive ? "text-blue-600" : "hover:text-blue-700"}`
             }
           >
             Products
@@ -39,11 +33,7 @@ const Navbar = () => {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              `text-lg ${
-                isActive
-                  ? "text-blue-400"
-                  : "hover:text-blue-300"
-              }`
+              `text-lg ${isActive ? "text-blue-600" : "hover:text-blue-700"}`
             }
           >
             Contact
@@ -51,12 +41,11 @@ const Navbar = () => {
         </div>
 
         <div className="flex space-x-4 items-center">
-
           <NavLink
             to="/cart"
             className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-8 rounded-lg transition-all"
           >
-            Cart
+            Cart <span className="tracking-wider">({cart.length})</span>
           </NavLink>
         </div>
       </div>

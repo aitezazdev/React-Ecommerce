@@ -5,28 +5,41 @@ export const productContext = createContext();
 
 const ProductContext = ({ children }) => {
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const fetchProducts = async () => {
     try {
       const { data } = await axios.get("https://fakestoreapi.com/products");
       setProducts(data);
-      console.log(data);
-      
+      // console.log(data);
     } catch (err) {
-        alert(err.message);
+      alert(err.message);
     } finally {
-        setLoading(false);
+      setLoading(false);
     }
+  };
+
+  const addToCart = (product) => {
+    const existingProduct = cart.find((item) => item.id === product.id);
+
+    if (!existingProduct) {
+      setCart((prevCart) => [...prevCart, product]);
+    }
+    console.log(cart);
+  };
+
+  const removeFromCart = (productId) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id!== productId));
   };
 
   useEffect(() => {
     fetchProducts();
-  }, [])
+  }, []);
 
   return (
     <div>
-      <productContext.Provider value={{ products, loading}}>
+      <productContext.Provider value={{ products, cart, addToCart, loading, removeFromCart }}>
         {children}
       </productContext.Provider>
     </div>

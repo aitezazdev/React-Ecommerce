@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import ProductsPage from "./Pages/ProductsPage";
 import ContactPage from "./Pages/ContactPage";
+import CartPage from "./Pages/CartPage";
 
 function App() {
   return (
@@ -15,9 +16,10 @@ function App() {
 
       <main className="flex-grow p-2">
         <Routes>
-          <Route path="/" element={<HomePage/>} />
-          <Route path="/products" element={<ProductsPage/>} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/products" element={<ProductsPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/cart" element={<CartPage />} />
         </Routes>
       </main>
 

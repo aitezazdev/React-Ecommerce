@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Products from "../Components/Products";
 
 const ProductsPage = () => {
   return (
-    <div>ProductsPage</div>
-  )
-}
+    <>
+      <Products />
+    </>
+  );
+};
 
-export default ProductsPage
+export default ProductsPage;

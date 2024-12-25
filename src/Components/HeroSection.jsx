@@ -3,7 +3,7 @@ import heroImg from "../assets/hero-tree.jpg";
 
 const HeroSection = () => {
   return (
-    <div className="relative my-7 mx-auto h-[70vh] w-[95%]">
+    <div className="relative my-24 mx-auto h-[70vh] w-[95%]">
       <img
         src={heroImg}
         alt="hero-sec image"

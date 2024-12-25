@@ -6,7 +6,7 @@ const Products = () => {
 
   if (loading) {
     return (
-      <div className="text-center min-h-screen mt-20 text-3xl font-semibold text-gray-600">
+      <div className="text-center min-h-[40vh] mt-20 text-3xl font-semibold text-gray-600">
         Loading...
       </div>
     );

@@ -6,10 +6,12 @@ import HomePage from "./Pages/HomePage";
 import ProductsPage from "./Pages/ProductsPage";
 import ContactPage from "./Pages/ContactPage";
 import CartPage from "./Pages/CartPage";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
+      <ToastContainer />
       <header>
         <Navbar />
       </header>

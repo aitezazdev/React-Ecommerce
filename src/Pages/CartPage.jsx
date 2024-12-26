@@ -62,16 +62,16 @@ const CartPage = () => {
                   <div className="flex items-center space-x-5">
                     <button
                       onClick={() => decreaseProductQuantity(cartItem)}
-                      className="text-xl font-bold text-gray-600"
+                      className="text-xl font-bold text-gray-600 px-2.5 rounded active:ring active:ring-blue-200"
                     >
-                      -
+                      –
                     </button>
                     <span className="px-4 py-2 text-sm bg-gray-100 rounded">
                       {cartItem.quantity}
                     </span>
                     <button
                       onClick={() => increaseProductQuantity(cartItem)}
-                      className="text-xl font-bold text-gray-600"
+                      className="text-xl font-bold text-gray-600 px-2 rounded active:ring active:ring-blue-200"
                     >
                       +
                     </button>

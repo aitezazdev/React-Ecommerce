@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { productContext } from "../Context/ProductContext";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductItem = ({ product }) => {
   const { cart, addToCart, removeFromCart } = useContext(productContext);
@@ -12,10 +14,20 @@ const ProductItem = ({ product }) => {
 
   const handleAddToCart = () => {
     addToCart(product);
+    toast.success("added to cart!", {
+      position: "top-center",
+      autoClose: 1000,
+      hideProgressBar: true,
+    });
   };
 
   const handleRemoveFromCart = () => {
     removeFromCart(product.id);
+    toast.error("removed from cart.", {
+      position: "top-center",
+      autoClose: 1000,
+      hideProgressBar: true,
+    });
   };
 
   return (

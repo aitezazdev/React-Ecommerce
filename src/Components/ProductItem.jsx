@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { productContext } from "../Context/ProductContext";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 
 const ProductItem = ({ product }) => {
   const { cart, addToCart, removeFromCart } = useContext(productContext);
@@ -14,7 +15,7 @@ const ProductItem = ({ product }) => {
 
   const handleAddToCart = () => {
     addToCart(product);
-    toast.success("added to cart!", {
+    toast.success("Added to cart!", {
       position: "top-center",
       autoClose: 1000,
       hideProgressBar: true,
@@ -23,7 +24,7 @@ const ProductItem = ({ product }) => {
 
   const handleRemoveFromCart = () => {
     removeFromCart(product.id);
-    toast.error("removed from cart.", {
+    toast.error("Removed from cart.", {
       position: "top-center",
       autoClose: 1000,
       hideProgressBar: true,
@@ -33,7 +34,7 @@ const ProductItem = ({ product }) => {
   return (
     <div
       key={product.id}
-      className="bg-white shadow-md rounded-lg overflow-hidden border hover:shadow-lg transition duration-300"
+      className="bg-white shadow-lg rounded-lg overflow-hidden border hover:shadow-xl transition duration-300"
     >
       <div className="h-48 overflow-hidden p-2">
         <img
@@ -50,19 +51,29 @@ const ProductItem = ({ product }) => {
           {product.description.slice(0, 50)}...
         </p>
       </div>
-      <div className="flex items-center justify-between pl-4 py-2 pr-2">
-        <p className="text-blue-500 text-xl font-bold">${product.price}</p>
+
+      <p className="text-gray-900 text-xl text-center my-2 font-bold">
+        ${product.price}
+      </p>
+      <div className="flex items-center justify-center p-2 gap-4">
+        
+        <Link to={`/product-details/${product.id}`}>
+          <button className="bg-gray-800 hover:bg-gray-900 text-white text-sm py-2 px-5 font-medium rounded-md transition-all duration-300 ease-in-out transform">
+            Buy Now
+          </button>
+        </Link>
+
         {isInCart ? (
           <button
             onClick={handleRemoveFromCart}
-            className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 font-semibold rounded transition"
+            className="bg-green-600 hover:bg-green-700 text-white text-sm py-2 px-5 font-medium rounded-md transition-all duration-300 ease-in-out transform"
           >
             In Cart
           </button>
         ) : (
           <button
             onClick={handleAddToCart}
-            className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 font-semibold rounded transition"
+            className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm py-2 px-5 font-medium rounded-md transition-all duration-300 ease-in-out transform"
           >
             Add to Cart
           </button>
@@ -72,4 +83,4 @@ const ProductItem = ({ product }) => {
   );
 };
 
-export default ProductItem
+export default ProductItem;

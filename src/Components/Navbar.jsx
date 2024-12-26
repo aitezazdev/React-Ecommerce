@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav className="shadow-md fixed z-50 w-full bg-white">
       <div className="container mx-auto flex justify-between items-center py-4 px-20">
         <div className="text-2xl font-bold">
-          <NavLink to="/" className="hover:text-blue-600">
+          <NavLink to="/" className="hover:text-indigo-600">
             MyShop
           </NavLink>
         </div>
@@ -18,7 +18,7 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `text-lg ${isActive ? "text-blue-600" : "hover:text-blue-700"}`
+              `text-lg ${isActive ? "text-indigo-600" : "hover:text-indigo-700"}`
             }
           >
             Home
@@ -26,7 +26,7 @@ const Navbar = () => {
           <NavLink
             to="/products"
             className={({ isActive }) =>
-              `text-lg ${isActive ? "text-blue-600" : "hover:text-blue-700"}`
+              `text-lg ${isActive ? "text-indigo-600" : "hover:text-indigo-700"}`
             }
           >
             Products
@@ -34,7 +34,7 @@ const Navbar = () => {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              `text-lg ${isActive ? "text-blue-600" : "hover:text-blue-700"}`
+              `text-lg ${isActive ? "text-indigo-600" : "hover:text-indigo-700"}`
             }
           >
             Contact
@@ -44,7 +44,7 @@ const Navbar = () => {
         <div className="flex space-x-4 items-center text-lg">
           <NavLink
             to="/cart"
-            className="flex items-center gap-2.5 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-5 rounded-lg transition-all"
+            className="flex items-center gap-2.5 bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-2 px-5 rounded-lg transition-all"
           >
            <FaCartShopping /> <p>Cart <span className="tracking-wider">({cart.length})</span></p>
           </NavLink>

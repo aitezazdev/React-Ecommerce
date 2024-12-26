@@ -12,7 +12,6 @@ const ProductContext = ({ children }) => {
     try {
       const { data } = await axios.get("https://fakestoreapi.com/products");
       setProducts(data);
-      // console.log(data);
     } catch (err) {
       alert(err.message);
     } finally {

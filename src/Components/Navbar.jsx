@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { productContext } from "../Context/ProductContext";
+import { FaCartShopping } from "react-icons/fa6";
 
 const Navbar = () => {
   const { cart } = useContext(productContext);
@@ -13,7 +14,7 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-        <div className="flex space-x-6">
+        <div className="flex space-x-6 text-lg">
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -40,12 +41,12 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-        <div className="flex space-x-4 items-center">
+        <div className="flex space-x-4 items-center text-lg">
           <NavLink
             to="/cart"
-            className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-8 rounded-lg transition-all"
+            className="flex items-center gap-2.5 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-5 rounded-lg transition-all"
           >
-            Cart <span className="tracking-wider">({cart.length})</span>
+           <FaCartShopping /> <p>Cart <span className="tracking-wider">({cart.length})</span></p>
           </NavLink>
         </div>
       </div>

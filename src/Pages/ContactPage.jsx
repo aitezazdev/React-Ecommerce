@@ -11,7 +11,7 @@ const ContactPage = () => {
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-gray-700"
+              className="block font-medium text-gray-700"
             >
               Name
             </label>
@@ -26,7 +26,7 @@ const ContactPage = () => {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
+              className="block font-medium text-gray-700"
             >
               Email
             </label>
@@ -41,7 +41,7 @@ const ContactPage = () => {
           <div>
             <label
               htmlFor="message"
-              className="block text-sm font-medium text-gray-700"
+              className="block font-medium text-gray-700"
             >
               Message
             </label>

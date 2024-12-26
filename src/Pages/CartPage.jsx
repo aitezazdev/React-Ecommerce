@@ -1,6 +1,9 @@
 import { useContext } from "react";
 import { productContext } from "../Context/ProductContext";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const CartPage = () => {
   const { cart, removeFromCart, updateCartQuantity } = useContext(productContext);
@@ -11,6 +14,11 @@ const CartPage = () => {
       updateCartQuantity(product.id, product.quantity - 1);
     } else {
       removeFromCart(product.id);
+      toast.error("removed from cart.", {
+            position: "top-center",
+            autoClose: 1000,
+            hideProgressBar: true,
+      });
     }
   };
 
@@ -30,12 +38,12 @@ const CartPage = () => {
   if (cart.length === 0) {
     return (
       <div className="text-center py-20 mt-20">
-        <h1 className="text-4xl font-semibold mb-4">Oops! No products in the cart</h1>
+        <h1 className="text-4xl font-semibold mb-4">Oops! No products in the Cart</h1>
         <button
           onClick={() => navigate("/products")}
-          className="bg-zinc-800 text-white py-2 mt-4 px-4 rounded hover:bg-zinc-900"
+          className="flex items-center gap-2 mx-auto bg-zinc-800 text-white py-2 mt-6 px-4 rounded hover:bg-zinc-900"
         >
-          Start Shopping
+          <FaArrowLeftLong /> Start Shopping
         </button>
       </div>
     );

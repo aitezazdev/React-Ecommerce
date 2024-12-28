@@ -8,7 +8,7 @@ const Footer = () => {
           Made with ❤️ by <a href="https://github.com/aitezazdev" target="_blank" rel="noopener noreferrer" className="text-indigo-500 hover:underline">aitezaz</a>
         </h2>
         <p className="text-sm text-gray-400">
-          &copy; {new Date().getFullYear()} MyShop. All rights reserved.
+          &copy; {new Date().getFullYear()} ClickNCart. All rights reserved.
         </p>
       </div>
     </footer>

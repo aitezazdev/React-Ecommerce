@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center py-4 px-20">
         <div className="text-2xl font-bold">
           <NavLink to="/" className="hover:text-indigo-600">
-            MyShop
+          ClickNCart
           </NavLink>
         </div>
 

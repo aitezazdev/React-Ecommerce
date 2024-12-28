@@ -2,15 +2,13 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-white py-8">
+    <footer className="bg-zinc-900 text-white py-6">
       <div className="container mx-auto text-center">
-
-        <p className="text-sm">
+        <h2 className="text-lg font-semibold mb-2">
+          Made with ❤️ by <a href="https://github.com/aitezazdev" target="_blank" rel="noopener noreferrer" className="text-indigo-500 hover:underline">aitezaz</a>
+        </h2>
+        <p className="text-sm text-gray-400">
           &copy; {new Date().getFullYear()} MyShop. All rights reserved.
-        </p>
-
-        <p className="text-xs mt-2">
-          Built with ❤️ and Tailwind CSS.
         </p>
       </div>
     </footer>

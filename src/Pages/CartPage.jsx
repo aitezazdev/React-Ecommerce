@@ -1,29 +1,31 @@
-import { useContext } from "react";
-import { productContext } from "../Context/ProductContext";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { removeFromCart, updateCartQuantity } from "../Store/Reducers/cartReducer";
 
 const CartPage = () => {
-  const { cart, removeFromCart, updateCartQuantity } = useContext(productContext);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const cart = useSelector((state) => state.cart.cart);
 
   const decreaseProductQuantity = (product) => {
     if (product.quantity > 1) {
-      updateCartQuantity(product.id, product.quantity - 1);
+      dispatch(updateCartQuantity({ productId: product.id, quantity: product.quantity - 1 }));
     } else {
-      removeFromCart(product.id);
-      toast.error("removed from cart.", {
-            position: "top-center",
-            autoClose: 1000,
-            hideProgressBar: true,
+      dispatch(removeFromCart(product.id));
+      toast.error("Removed from cart.", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: true,
       });
     }
   };
 
   const increaseProductQuantity = (product) => {
-    updateCartQuantity(product.id, product.quantity + 1);
+    dispatch(updateCartQuantity({ productId: product.id, quantity: product.quantity + 1 }));
   };
 
   const getTotalAmount = () => {
@@ -109,9 +111,11 @@ const CartPage = () => {
             <p>Total amount</p>
             <p>${(parseFloat(getTotalAmount()) + 30).toFixed(2)}</p>
           </div>
-          <button className="w-full bg-black text-white py-3 rounded hover:bg-gray-800">
-            Go to checkout
-          </button>
+          <Link to={"/checkout"}>
+            <button className="w-full bg-black text-white py-3 rounded hover:bg-gray-800">
+              Go to checkout
+            </button>
+          </Link>
         </div>
       </div>
     </div>

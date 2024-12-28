@@ -1,13 +1,19 @@
-import { useContext } from "react";
-import { productContext } from "../Context/ProductContext";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import ProductItem from "./ProductItem";
+import { asyncGetProducts } from "../Store/Actions/productsAction";
 
 const Products = () => {
-  const { products, loading } = useContext(productContext);
+  const dispatch = useDispatch();
+  const { products, loading } = useSelector((state) => state.products);
+
+  useEffect(() => {
+    dispatch(asyncGetProducts());
+  }, [dispatch]);
 
   if (loading) {
     return (
-      <div className="text-center min-h-[40vh] mt-20 text-3xl font-semibold text-gray-600">
+      <div className="text-center min-h-[40vh] pt-24 text-3xl font-semibold text-gray-600">
         Loading...
       </div>
     );

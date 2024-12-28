@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
-import { productContext } from "../Context/ProductContext";
+import { useSelector } from "react-redux";
 import { FaCartShopping } from "react-icons/fa6";
 
 const Navbar = () => {
-  const { cart } = useContext(productContext);
+  const cart = useSelector((state) => state.cart.cart);
+
   return (
     <nav className="shadow-md fixed z-50 w-full bg-white">
       <div className="container mx-auto flex justify-between items-center py-4 px-20">
@@ -46,7 +47,10 @@ const Navbar = () => {
             to="/cart"
             className="flex items-center gap-2.5 bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-2 px-5 rounded-lg transition-all"
           >
-           <FaCartShopping /> <p>Cart <span className="tracking-wider">({cart.length})</span></p>
+            <FaCartShopping />
+            <p>
+              Cart <span className="tracking-wider">({cart.length})</span>
+            </p>
           </NavLink>
         </div>
       </div>

@@ -1,11 +1,12 @@
-import { useContext, useEffect, useState } from "react";
-import { productContext } from "../Context/ProductContext";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
+import { addToCart, removeFromCart } from "../Store/Reducers/cartReducer";
 
 const ProductItem = ({ product }) => {
-  const { cart, addToCart, removeFromCart } = useContext(productContext);
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart.cart);
   const [isInCart, setIsInCart] = useState(false);
 
   useEffect(() => {
@@ -14,7 +15,7 @@ const ProductItem = ({ product }) => {
   }, [cart, product.id]);
 
   const handleAddToCart = () => {
-    addToCart(product);
+    dispatch(addToCart(product));
     toast.success("Added to cart!", {
       position: "top-center",
       autoClose: 1000,
@@ -23,7 +24,7 @@ const ProductItem = ({ product }) => {
   };
 
   const handleRemoveFromCart = () => {
-    removeFromCart(product.id);
+    dispatch(removeFromCart(product.id));
     toast.error("Removed from cart.", {
       position: "top-center",
       autoClose: 1000,
@@ -56,13 +57,11 @@ const ProductItem = ({ product }) => {
         ${product.price}
       </p>
       <div className="flex items-center justify-center p-2 gap-4">
-        
         <Link to={`/product-details/${product.id}`}>
           <button className="bg-gray-800 hover:bg-gray-900 text-white text-sm py-2 px-5 font-medium rounded-md transition-all duration-300 ease-in-out transform">
             Buy Now
           </button>
         </Link>
-
         {isInCart ? (
           <button
             onClick={handleRemoveFromCart}

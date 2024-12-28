@@ -2,10 +2,10 @@ import React from 'react';
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen pt-20 flex flex-col items-center justify-center bg-gray-100 px-4">
-      <div className="bg-white shadow-md rounded-lg p-8 w-full max-w-xl">
+    <div className="min-h-screen pt-20 flex flex-col items-center justify-center px-4">
+      <div className="shadow-lg bg-gray-100 rounded-lg p-8 w-full max-w-xl">
         <h1 className="text-3xl font-bold text-gray-800 text-center mb-6">
-          Get in Touch
+          Contact Us
         </h1>
         <div className="space-y-6">
           <div>

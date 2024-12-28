@@ -52,8 +52,8 @@ const CartPage = () => {
   }
 
   return (
-    <div className="md:w-[85%] w-full mx-auto px-2 py-20">
-      <h1 className="text-center text-4xl my-2 text-semibold">Checkout</h1>
+    <div className="md:w-[85%] w-full mx-auto px-2 py-28">
+      <h1 className="text-center text-5xl my-2 font-semibold">Cart</h1><hr className="my-10" />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-5">
         <div className="md:col-span-2 bg-white shadow rounded-lg p-4">
           <h2 className="text-xl font-bold mb-4">Item List</h2>

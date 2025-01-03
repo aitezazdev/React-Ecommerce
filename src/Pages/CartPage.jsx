@@ -45,7 +45,7 @@ const CartPage = () => {
           onClick={() => navigate("/products")}
           className="flex items-center gap-2 mx-auto bg-zinc-800 text-white py-2 mt-6 px-4 rounded hover:bg-zinc-900"
         >
-          <FaArrowLeftLong /> Start Shopping
+          <FaArrowLeftLong /> Continue Shopping
         </button>
       </div>
     );

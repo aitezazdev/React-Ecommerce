@@ -35,9 +35,9 @@ const ProductItem = ({ product }) => {
   return (
     <div
       key={product.id}
-      className="bg-white shadow-lg rounded-lg overflow-hidden border hover:shadow-xl transition duration-300"
+      className="w-[350px] bg-white shadow-lg rounded-lg p-2 overflow-hidden border hover:shadow-xl transition duration-300"
     >
-      <div className="h-48 overflow-hidden p-2">
+      <div className="h-48 overflow-hidden p-2.5">
         <img
           src={product.image}
           alt={product.title}
@@ -49,7 +49,7 @@ const ProductItem = ({ product }) => {
           {product.title}
         </h2>
         <p className="text-gray-600 text-sm mt-1">
-          {product.description.slice(0, 50)}...
+          {product.description.slice(0, 70)}...
         </p>
       </div>
 

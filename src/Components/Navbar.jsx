@@ -34,7 +34,7 @@ const Navbar = () => {
         `}>
           <div className="flex flex-col md:flex-row items-center w-full md:w-auto space-y-4 md:space-y-0 md:space-x-6 text-lg">
             <NavLink
-              to="/"
+              to="/React-Ecommerce"
               className={({ isActive }) =>
                 `text-lg w-full md:w-auto text-center ${isActive ? "text-indigo-600" : "hover:text-indigo-700"}`
               }

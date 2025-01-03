@@ -40,7 +40,7 @@ const Products = () => {
       <h1 className="text-4xl font-bold text-gray-800 my-6 text-center">
         Latest Products
       </h1>
-      <div className="flex justify-center space-x-4 my-4">
+      <div className="flex justify-center flex-wrap gap-5 my-4">
         <button
           onClick={() => filterByCategory("all")}
           className={`text-sm border border-black outline-none px-3 py-1 rounded hover:bg-black hover:text-white transition-all ${selectedCategory === "all" ? "bg-black text-white" : ""}`}

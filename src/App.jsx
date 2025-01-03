@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import ProductsPage from "./Pages/ProductsPage";
 import ContactPage from "./Pages/ContactPage";
@@ -21,7 +21,6 @@ function App() {
       </header>
 
       <main className="flex-grow p-2">
-        <Router basename="/React-Ecommerce">
           <Routes>
             <Route path="/" index element={<HomePage />} />
             <Route path="/products" element={<ProductsPage />} />
@@ -30,7 +29,6 @@ function App() {
             <Route path="/product-details/:id" element={<ProductDetails />} />
             <Route path="/checkout" element={<Checkout />} />
           </Routes>
-        </Router>
       </main>
 
       <footer>

@@ -17,17 +17,17 @@ const ProductItem = ({ product }) => {
   const handleAddToCart = () => {
     dispatch(addToCart(product));
     toast.success("Added to cart!", {
-      position: "top-center",
-      autoClose: 1000,
+      position: "top-right",
+      autoClose: 850,
       hideProgressBar: true,
     });
   };
 
   const handleRemoveFromCart = () => {
     dispatch(removeFromCart(product.id));
-    toast.error("Removed from cart.", {
-      position: "top-center",
-      autoClose: 1000,
+    toast.info("Removed from cart.", {
+      position: "top-right",
+      autoClose: 850,
       hideProgressBar: true,
     });
   };

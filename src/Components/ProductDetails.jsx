@@ -20,8 +20,8 @@ const ProductDetails = () => {
     if (productDetails) {
       dispatch(addToCart(productDetails));
       toast.success("Added to cart!", {
-        position: "top-center",
-        autoClose: 1000,
+        position: "top-right",
+        autoClose: 850,
         hideProgressBar: true,
       });
     }

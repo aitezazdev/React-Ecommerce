@@ -17,8 +17,8 @@ const CartPage = () => {
     } else {
       dispatch(removeFromCart(product.id));
       toast.error("Removed from cart.", {
-        position: "top-center",
-        autoClose: 1000,
+        position: "top-right",
+        autoClose: 850,
         hideProgressBar: true,
       });
     }

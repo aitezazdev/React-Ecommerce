@@ -23,11 +23,11 @@ function App() {
       <main className="flex-grow p-2">
           <Routes>
             <Route path="/React-Ecommerce" index element={<HomePage />} />
-            <Route path="/products" element={<ProductsPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/cart" element={<CartPage />} />
-            <Route path="/product-details/:id" element={<ProductDetails />} />
-            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/React-Ecommerce/products" element={<ProductsPage />} />
+            <Route path="/React-Ecommerce/contact" element={<ContactPage />} />
+            <Route path="/React-Ecommerce/cart" element={<CartPage />} />
+            <Route path="/React-Ecommerce/product-details/:id" element={<ProductDetails />} />
+            <Route path="/React-Ecommerce/checkout" element={<Checkout />} />
           </Routes>
       </main>
 

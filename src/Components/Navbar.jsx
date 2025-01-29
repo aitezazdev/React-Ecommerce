@@ -12,7 +12,7 @@ const Navbar = () => {
     <nav className="shadow-md fixed z-50 w-full bg-white">
       <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-20">
         <div className="text-2xl font-bold">
-          <NavLink to="/" className="hover:text-indigo-600">
+          <NavLink to="/React-Ecommerce" className="hover:text-indigo-600">
             ClickNCart
           </NavLink>
         </div>
@@ -43,7 +43,7 @@ const Navbar = () => {
               Home
             </NavLink>
             <NavLink
-              to="/products"
+              to="/React-Ecommerce/products"
               className={({ isActive }) =>
                 `text-lg w-full md:w-auto text-center ${isActive ? "text-indigo-600" : "hover:text-indigo-700"}`
               }
@@ -52,7 +52,7 @@ const Navbar = () => {
               Products
             </NavLink>
             <NavLink
-              to="/contact"
+              to="/React-Ecommerce/contact"
               className={({ isActive }) =>
                 `text-lg w-full md:w-auto text-center ${isActive ? "text-indigo-600" : "hover:text-indigo-700"}`
               }
@@ -63,7 +63,7 @@ const Navbar = () => {
           </div>
           
           <NavLink
-            to="/cart"
+            to="/React-Ecommerce/cart"
             className="flex items-center justify-center w-2/3 md:w-auto gap-2.5 bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-2 px-5 rounded-lg transition-all"
             onClick={() => setIsMenuOpen(false)}
           >

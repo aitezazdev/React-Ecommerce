@@ -65,7 +65,7 @@ const ProductDetails = () => {
               Add To Cart
             </button>
             <button
-              onClick={() => navigate("/cart")}
+              onClick={() => navigate("/React-Ecommerce/cart")}
               className="bg-gray-800 hover:bg-gray-900 text-white text-sm py-2 px-5 font-medium rounded-md transition-all duration-300 ease-in-out transform"
             >
               Go To Cart

@@ -42,7 +42,7 @@ const CartPage = () => {
       <div className="text-center py-20 mt-20">
         <h1 className="text-4xl font-semibold mb-4">Oops! No products in the Cart</h1>
         <button
-          onClick={() => navigate("/products")}
+          onClick={() => navigate("/React-Ecommerce/products")}
           className="flex items-center gap-2 mx-auto bg-zinc-800 text-white py-2 mt-6 px-4 rounded hover:bg-zinc-900"
         >
           <FaArrowLeftLong /> Continue Shopping
@@ -111,7 +111,7 @@ const CartPage = () => {
             <p>Total amount</p>
             <p>${(parseFloat(getTotalAmount()) + 30).toFixed(2)}</p>
           </div>
-          <Link to={"/checkout"}>
+          <Link to={"/React-Ecommerce/checkout"}>
             <button className="w-full bg-black text-white py-3 rounded hover:bg-gray-800">
               Go to checkout
             </button>

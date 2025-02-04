@@ -57,7 +57,7 @@ const ProductItem = ({ product }) => {
         ${product.price}
       </p>
       <div className="flex items-center justify-center p-2 gap-4">
-        <Link to={`/product-details/${product.id}`}>
+        <Link to={`/React-Ecommerce/product-details/${product.id}`}>
           <button className="bg-gray-800 hover:bg-gray-900 text-white text-sm py-2 px-5 font-medium rounded-md transition-all duration-300 ease-in-out transform">
             Buy Now
           </button>
